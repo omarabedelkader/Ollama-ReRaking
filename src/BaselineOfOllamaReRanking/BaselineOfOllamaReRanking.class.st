@@ -1,12 +1,12 @@
 Class {
-	#name : 'BaselineOfOllama-ReRaking',
+	#name : 'BaselineOfOllamaReRanking',
 	#superclass : 'BaselineOf',
-	#category : 'BaselineOfOllama-ReRaking',
-	#package : 'BaselineOfOllama-ReRaking'
+	#category : 'BaselineOfOllamaReRanking',
+	#package : 'BaselineOfOllamaReRankingg'
 }
 
 { #category : 'baselines' }
-BaselineOfOllama-ReRaking >> baseline: spec [ 
+BaselineOfOllamaReRanking >> baseline: spec [ 
 
 	<baseline>
 	spec for: #common do: [
@@ -18,7 +18,7 @@ BaselineOfOllama-ReRaking >> baseline: spec [
 ]
 
 { #category : 'baselines' }
-BaselineOfOllama-ReRaking >> defineDependencies: spec [ 
+BaselineOfOllamaReRanking>> defineDependencies: spec [ 
 
 	spec
 		baseline: 'NeoJSON'
@@ -27,18 +27,18 @@ BaselineOfOllama-ReRaking >> defineDependencies: spec [
 ]
 
 { #category : 'baselines' }
-BaselineOfOllama-ReRaking >> defineGroups: spec [ 
+BaselineOfOllamaReRanking >> defineGroups: spec [ 
 
 ]
 
 { #category : 'baselines' }
-BaselineOfOllama-ReRaking >> definePackages: spec [ 
+BaselineOfOllamaReRanking >> definePackages: spec [ 
 
 	spec 
 		package: 'Ollama-API' 
 		with: [ spec requires: #( 'NeoJSON' ) ].
 	spec
 		package: 'OllamaAPI'
-		with: [ spec requires: #( 'Ollama-ReRanking' ) ].
+		with: [ spec requires: #( 'OllamaReRanking' ) ].
 
 ]
