@@ -1,1 +1,1 @@
-Package { #name : 'Ollama-ReRanking' }
+Package { #name : 'OllamaReRanking' }

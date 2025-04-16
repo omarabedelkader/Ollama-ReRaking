@@ -4,8 +4,8 @@ Class {
 	#instVars : [
 		'completionContext'
 	],
-	#category : 'Ollama-ReRanking-Core',
-	#package : 'Ollama-ReRanking',
+	#category : 'OllamaReRanking-Core',
+	#package : 'OllamaReRanking',
 	#tag : 'Core'
 }
 
