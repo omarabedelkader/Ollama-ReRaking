@@ -12,9 +12,43 @@ Class {
 		'top_p',
 		'format'
 	],
+	#classInstVars : [
+		'defaultModel'
+	],
 	#category : 'OllamaAPI',
 	#package : 'OllamaAPI'
 }
+
+{ #category : 'accessing' }
+OllamaAPI class >> defaultModel [
+
+	^ defaultModel ifNil: [ defaultModel := OCodeLlamaModel class >> #b7 ]
+]
+
+{ #category : 'accessing' }
+OllamaAPI class >> defaultModel: anObject [
+
+	defaultModel := anObject
+]
+
+{ #category : 'accessing' }
+OllamaAPI class >> ollamaSettings: aBuilder [
+
+	<systemsettings>
+	(aBuilder group: #ChatPharo)
+		parent: #tools;
+		with: [
+			(aBuilder pickOne: #defaultModel)
+				order: -100000;
+				label: 'Ollama Default model';
+				target: self;
+				default: OCodeLlamaModel class >> #b7;
+				domainValues:
+					(((Pragma allNamed: #ollamaInit:) collect: [ :pragma |
+							  pragma arguments first -> pragma method ]) sorted: [ :a :b |
+							 a key < b key ]);
+				ghostHelp: 'Model name' ]
+]
 
 { #category : 'adding' }
 OllamaAPI >> addParameterTo: paramDic [

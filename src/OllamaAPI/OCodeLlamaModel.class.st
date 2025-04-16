@@ -14,6 +14,24 @@ OCodeLlamaModel class >> b7 [
 		  yourself
 ]
 
+{ #category : 'as yet unclassified' }
+OCodeLlamaModel class >> code [
+
+	<ollamaInit: 'codellama:code'>
+	^ self new
+		  tag: 'code';
+		  yourself
+]
+
+{ #category : 'as yet unclassified' }
+OCodeLlamaModel class >> code7b [
+
+	<ollamaInit: 'codellama:7b-code'>
+	^ self new
+		  tag: '7b-code';
+		  yourself
+]
+
 { #category : 'accessing' }
 OCodeLlamaModel >> name [
 
