@@ -1,12 +1,12 @@
 Class {
-	#name : 'BaselineOfAIChatPharo',
+	#name : 'BaselineOfOllama-ReRaking',
 	#superclass : 'BaselineOf',
-	#category : 'BaselineOfOllamaAPI',
-	#package : 'BaselineOfOllamaAPI'
+	#category : 'BaselineOfOllama-ReRaking',
+	#package : 'BaselineOfOllama-ReRaking'
 }
 
 { #category : 'baselines' }
-BaselineOfAIChatPharo >> baseline: spec [ 
+BaselineOfOllama-ReRaking >> baseline: spec [ 
 
 	<baseline>
 	spec for: #common do: [
@@ -18,7 +18,7 @@ BaselineOfAIChatPharo >> baseline: spec [
 ]
 
 { #category : 'baselines' }
-BaselineOfAIChatPharo >> defineDependencies: spec [ 
+BaselineOfOllama-ReRaking >> defineDependencies: spec [ 
 
 	spec
 		baseline: 'NeoJSON'
@@ -27,12 +27,12 @@ BaselineOfAIChatPharo >> defineDependencies: spec [
 ]
 
 { #category : 'baselines' }
-BaselineOfAIChatPharo >> defineGroups: spec [ 
+BaselineOfOllama-ReRaking >> defineGroups: spec [ 
 
 ]
 
 { #category : 'baselines' }
-BaselineOfAIChatPharo >> definePackages: spec [ 
+BaselineOfOllama-ReRaking >> definePackages: spec [ 
 
 	spec 
 		package: 'Ollama-API' 
