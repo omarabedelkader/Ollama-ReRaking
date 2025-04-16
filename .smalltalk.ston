@@ -1,0 +1,9 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'Ollama-ReRaking',
+      #directory : 'src',
+      #platforms : [ #pharo ]
+    }
+  ]
+}
