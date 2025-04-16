@@ -1,3 +1,39 @@
+"
+to allow this fetcher to work, please modify this code to this :
+```
+{ #category : 'visiting' }
+CoASTHeuristicsResultSetBuilder >> visitMessageNode: aMessageNode [ 
+
+    ""1) Build the normal fetcher chain from the messageHeuristic""
+    | normalFetcher reRankFetcher resultSet |
+
+    completionContext completionToken ifEmpty: [ ^ super visitMessageNode: aMessageNode ].
+    normalFetcher := self messageHeuristic fetcherFor: aMessageNode inContext: completionContext.
+
+    ""2) Decorate it with your Ollama ReRank""
+    reRankFetcher := CoOllamaReRankFetcher new
+        decoree: normalFetcher;
+        completionContext: completionContext;
+        yourself.
+
+    ""3) Wrap that in a final CoResultSet""
+    resultSet := CoResultSet fetcher: reRankFetcher withoutRepetition withNarrowHistory.
+
+    ""4) Optionally set the filter to begin with whatever the user typed""
+    resultSet filter: (
+        CoBeginsWithFilter 
+            caseSensitive: NECPreferences caseSensitive
+            filterString: completionContext completionToken
+    ).
+    resultSet replaceFilterWith: (
+        CoCaseSensitiveBeginsWithFilter 
+            filterString: completionContext completionToken
+    ).
+
+    ^ resultSet
+]
+```
+"
 Class {
 	#name : 'CoOllamaReRankFetcher',
 	#superclass : 'CoFetcherDecorator',
