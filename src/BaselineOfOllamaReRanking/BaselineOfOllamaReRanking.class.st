@@ -39,6 +39,6 @@ BaselineOfOllamaReRanking >> definePackages: spec [
 		with: [ spec requires: #( 'NeoJSON' ) ].
 	spec
 		package: 'OllamaReRanking'
-		with: [ spec requires: #( 'Ollama-API' ) ].
+		with: [ spec requires: #( 'OllamaAPI' ) ].
 
 ]
