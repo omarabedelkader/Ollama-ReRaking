@@ -2,7 +2,7 @@ Class {
 	#name : 'BaselineOfOllamaReRanking',
 	#superclass : 'BaselineOf',
 	#category : 'BaselineOfOllamaReRanking',
-	#package : 'BaselineOfOllamaReRankingg'
+	#package : 'BaselineOfOllamaReRanking'
 }
 
 { #category : 'baselines' }
