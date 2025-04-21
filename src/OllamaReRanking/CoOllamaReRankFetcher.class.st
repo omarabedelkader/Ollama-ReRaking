@@ -40,9 +40,8 @@ Class {
 	#instVars : [
 		'completionContext'
 	],
-	#category : 'OllamaReRanking-Core',
-	#package : 'OllamaReRanking',
-	#tag : 'Core'
+	#category : 'OllamaReRanking',
+	#package : 'OllamaReRanking'
 }
 
 { #category : 'accessing' }
